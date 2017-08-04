@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Calligraffitti|Over+the+Rainbow');
+
+body, html {
+/* background: grey; */
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row nowrap;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.board {
+  width: 500px;
+  height: 476px;
+/*   border-style: solid; */
+/*   border-width: 1px; */
+  border-radius: 45px;
+  margin: auto;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-flow: column;
+  background-image: url('https://imgur.com/OIasWMD.jpg');
+  background-size: 500px;
+  background-position: center;
+  
+}
+
+.letterSpacesContainer {
+/*   display: none; */
+}
+
+.choices {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: row;
+   font-family: 'Calligraffitti', cursive;
+  font-size: 60px;
+}
+
+.choices:hover {
+  cursor: pointer;
+}
+
+#choice1, #choice2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  justify-content: center;
+  border: solid black 1px;
+}
+
+#choice1 > h1, #choice2 > h1 {
+  font-weight: 700;
+  font-size: 85px;
+  
+}
+ 
+.choiceText {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 700;
+  font-family: 'Calligraffitti', cursive;
+  margin: 15px;
+}
+
+.winner {
+  text-align: center;
+  font-size: 60px;
+  margin: 15px;
+}
+
+.spaces {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.spaces:hover {
+  cursor: pointer;
+}
+
+.space {
+  width: 150px;
+  height: 150px;
+  font-family: 'Calligraffitti', cursive;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  font-size: 125px;
+}
