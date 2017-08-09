@@ -1,0 +1,23 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "Tic Tac Toe game",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run babel | node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelDurfey/TicTacToe.git"
+  },
+  "author": "Michael Durfey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichaelDurfey/TicTacToe/issues"
+  },
+  "homepage": "https://github.com/MichaelDurfey/TicTacToe#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
