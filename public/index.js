@@ -1,4 +1,3 @@
-
   let container = document.getElementById('letterSpacesContainer');
   const scoreDiv = document.getElementById('score');
   let boardArr;
@@ -20,6 +19,8 @@
   let drawTimeOut;
   let myId;
   let p2Turn = false;
+
+window.onload = () => initialize();
 
   let winnerAction = a => {
     $(container).html(`
@@ -111,7 +112,6 @@ let initialize = () => {
       choiceMade = true;
     })
 }
-initialize();
 
   let moveFunction = p2move => {        
       if (p2move != undefined) {
@@ -128,8 +128,6 @@ initialize();
         }
       }) 
       checkForWinner();
-      console.log("player1: " + player1)
-      console.log("player2: " + player2)
   };
 
   $(container).on('click', '.space', (e)=>{
@@ -183,20 +181,14 @@ let player2Move = (player2Letter) => {
         break;
       }
       else if (countsp2[index] == 2 && item.some( i => takenMovesArr.includes(i) == false)){    
-        console.log(counterp2);
-        console.log(item);
         p2move = item.find( i => takenMovesArr.indexOf(i) == -1);        
         return moveFunction(p2move);
         break;
       }
       else if (countsp1[index] == 2 && item.some( i => takenMovesArr.includes(i) == false) && p2move == undefined){      
-        console.log(item);
-        console.log(counterp1);
         p2move = item.find( i => takenMovesArr.indexOf(i) == -1); 
-        console.log(p2move);
       }   
   } 
-    console.log(counter)
     if (p2move != undefined && counter == winningIndices.length) return moveFunction(p2move);
     if (counter == winningIndices.length && p2move == undefined){
       counter = 0;
@@ -211,12 +203,10 @@ let player2Move = (player2Letter) => {
         for (let g of player2) {
           c.indexOf(g) != -1 ? countsp2[index] = counterp2 += 1 : 1;
         }
-        console.log(countsp1)
         // console.log("counterp2 beginning of loop " + countsp2[winningIndices.indexOf(c)]);
         if (countsp2[index] == 1 && c.some( i => takenMovesArr.indexOf(i) == -1) && p2move == undefined) {
           p2move = c.find( i => takenMovesArr.indexOf(i) == -1)
           return moveFunction(p2move);
-          console.log("counterp2 == 1 " + counterp2)
           break
         }
         else if (p2move == undefined && counter == winningIndices.length){
@@ -225,18 +215,13 @@ let player2Move = (player2Letter) => {
               randomNumber = Math.floor(Math.random() * 8);
               if (randomNumber % 2 == 0 && takenMovesArr.indexOf(randomNumber) == -1) {
                 p2move = availableMovesArr[randomNumber]
-                console.log("Random Number " + randomNumber)
                 return moveFunction(p2move);
                 break;
               }
             } while (randomNumber % 2 != 0);
-          console.log("availableMovesArr")
         }
       } //END LAST LOOP
     } //if statement end
-      console.log(countsp1);
-      console.log(countsp2);
-      console.log(player1, "<--p1 p2-->", player2);
   } // if p2 Turn == true
 } // End player2Move function
 
