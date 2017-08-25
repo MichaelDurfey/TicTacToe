@@ -1,3 +1,4 @@
+  $(document).ready( () => {
   let container = document.getElementById('letterSpacesContainer');
   const scoreDiv = document.getElementById('score');
   let boardArr;
@@ -225,4 +226,4 @@ let player2Move = (player2Letter) => {
   } // if p2 Turn == true
 } // End player2Move function
 
-
+})
